@@ -1,0 +1,75 @@
+<div class="grid lg:grid-cols-2 lg:gap-16 my-14 lg:my-32 mx-auto">
+  <div class="flex justify-start w-full mb-10 lg:mb-0">
+    <div class="md:mx-auto mx-6 w-full max-w-lg bg-gray-300 dark:bg-brand-gray-light p-10 rounded">
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="w-full mb-6 lg:mb-0">
+          <h1 class="text-3xl md:text-4xl font-medium title-font mb-2 font-semibold font-serif dark:text-gray-300 text-gray-800">
+            Edit Email
+          </h1>
+          <div class="h-1 w-20 bg-brand-orange rounded"></div>
+        </div>
+      </div>
+
+
+      <div>
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "mt-6" }, data: { turbo: false }) do |f| %>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="relative col-span-2 z-0 mb-6">
+          <%= f.label :email, "Email Address", class: "text-base md:text-lg dark:text-gray-300 text-gray-800" %>
+          <%= f.email_field :email, placeholder: "name@example.com", class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none px-1 rounded dark:rounded-none border-0 border-b border-gray-400 dark:border-gray-300 dark:text-gray-300 text-gray-800 bg-gray-200 dark:bg-transparent py-2.5 px-0 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+        </div>
+
+        <div class="relative col-span-2 z-0 mb-6">
+          <%= f.label :current_password, "Current Password", class: "text-base md:text-lg dark:text-gray-300 text-gray-800" %>
+          <%= f.password_field :current_password, placeholder: "*********", class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none px-1 rounded dark:rounded-none border-0 border-b border-gray-400 dark:border-gray-300 dark:text-gray-300 text-gray-800 bg-gray-200 dark:bg-transparent py-2.5 px-0 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          <span class="text-sm italic text-gray-600 dark:text-gray-400">(We need your current password to confirm your changes)</span>
+        </div>
+
+        <div class="flex justify-end col-span-2">
+          <%= f.submit "Change Email", class: "text-base md:text-lg rounded-md bg-brand-orange px-10 py-2 text-white" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="flex justify-start w-full">
+    <div class="md:mx-auto mx-6 w-full max-w-lg bg-gray-300 dark:bg-brand-gray-light p-10 rounded">
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="w-full mb-6 lg:mb-0">
+          <h1 class="text-3xl md:text-4xl font-medium title-font mb-2 font-semibold font-serif dark:text-gray-300 text-gray-800">
+            Edit Password
+          </h1>
+          <div class="h-1 w-20 bg-brand-orange rounded"></div>
+        </div>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "mt-6" }, data: { turbo: false }) do |f| %>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="relative z-0 mb-6 col-span-2 lg:col-span-1">
+          <%= f.label :password, "New Password", class: "text-base md:text-lg dark:text-gray-300 text-gray-800" %>
+          <%= f.password_field :password, placeholder: "*********", class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none px-1 rounded dark:rounded-none border-0 border-b border-gray-400 dark:border-gray-300 dark:text-gray-300 text-gray-800 bg-gray-200 dark:bg-transparent py-2.5 px-0 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+        </div>
+
+        <div class="relative  z-0 mb-6 col-span-2 lg:col-span-1">
+          <%= f.label :password_confirmation, "Confirm New Password", class: "text-base md:text-lg dark:text-gray-300 text-gray-800" %>
+          <%= f.password_field :password_confirmation, placeholder: "*********", class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none px-1 rounded dark:rounded-none border-0 border-b border-gray-400 dark:border-gray-300 dark:text-gray-300 text-gray-800 dark:bg-transparent bg-gray-200 py-2.5 px-0 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+        </div>
+
+        <div class="relative col-span-2 z-0 mb-6">
+          <%= f.label :current_password, "Current Password", class: "text-base md:text-lg dark:text-gray-300 text-gray-800" %>
+          <%= f.password_field :current_password, placeholder: "*********", class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none px-1 rounded dark:rounded-none border-0 border-b border-gray-400 dark:border-gray-300 dark:text-gray-300 text-gray-800 bg-gray-200 dark:bg-transparent py-2.5 px-0 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          <span class="text-sm italic text-gray-600 dark:text-gray-400">(We need your current password to confirm your changes)</span>
+        </div>
+
+        <div class="flex justify-end col-span-2">
+          <%= f.submit "Change Password", class: "text-base md:text-lg rounded-md bg-brand-orange px-10 py-2 text-white" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

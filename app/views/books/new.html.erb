@@ -1,0 +1,55 @@
+<div class="flex my-14 lg:my-32 items-center justify-start">
+  <div class="md:mx-auto mx-6 w-full max-w-lg bg-gray-300 dark:bg-brand-gray-light p-12 rounded">
+    <div class="flex flex-wrap w-full">
+      <div class="w-full mb-6 lg:mb-0">
+        <h1 class="text-3xl md:text-4xl font-medium title-font mb-2 font-semibold font-serif dark:text-gray-300 text-gray-800">
+          Add New Book
+        </h1>
+        <div class="h-1 w-20 bg-brand-orange rounded"></div>
+      </div>
+    </div>
+
+    <%= form_with(model: @book, class: "mt-10") do |f| %>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="relative z-0 col-span-2 mt-12">
+          <div class="relative z-0">
+            <%= f.label :name, "Book Title", class: "text-base md:text-lg font-semibold dark:text-gray-300 text-gray-700" %>
+            <%= f.text_field :name, placeholder: "Your Book Title", class: "text-sm md:text-base transition-colors duration-300 transform block w-full border-0 border-b border-gray-400 rounded dark:rounded-none placeholder-gray-500 dark:border-gray-500 bg-gray-200 dark:bg-transparent text-gray-800 dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          </div>
+        </div>
+        <div class="relative z-0 col-span-2">
+            <%= f.label :description, "Book Description", class: "text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300" %>
+            <%= f.text_area :description, placeholder: "Your Book Description...", rows: 3, class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none rounded dark:rounded-none border-0 border-b border-gray-400 dark:bg-transparent dark:border-gray-500 bg-gray-200 text-gray-800 dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+        </div>
+        <div class="relative z-0 col-span-2 ">
+          <div class="relative z-0">
+            <%= f.label :genre, "Book Genre", class: "text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300" %>
+            <%= f.text_field :genre, placeholder: "Your book genre", class: "text-sm md:text-base transition-colors duration-300 transform block w-full border-0 border-b border-gray-400 rounded dark:rounded-none placeholder-gray-500 dark:border-gray-500 bg-gray-200 dark:bg-transparent text-gray-800 dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          </div>
+        </div>
+        <div class="relative z-0 col-span-2 ">
+          <div class="relative z-0">
+            <%= f.label :published_year, "Book Publishing Year", class: "text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300" %>
+            <%= f.number_field :published_year, placeholder: "Your book published year", class: "text-sm md:text-base transition-colors duration-300 transform block w-full border-0 border-b border-gray-400 rounded dark:rounded-none placeholder-gray-500 dark:border-gray-500 bg-gray-200 dark:bg-transparent text-gray-800 dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          </div>
+        </div>
+        <div class="relative z-0 col-span-2">
+          <div class="relative z-0">
+            <%= f.label :author_name, "Author Name", class: "text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300" %>
+            <%= f.text_field :author_name, placeholder: "Author Name", class: "text-sm md:text-base transition-colors duration-300 transform block w-full border-0 border-b border-gray-400 rounded dark:rounded-none dark:border-gray-500 bg-gray-200 text-gray-800 dark:bg-transparent dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          </div>
+        </div>
+        <div class="relative z-0 col-span-2 ">
+          <div class="relative z-0">
+            <%= f.label :author_bio, "Author Biography", class: "text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300" %>
+            <%= f.text_area :author_bio, placeholder: "Short Author Biography ...", rows: 3, class: "text-sm md:text-base transition-colors duration-300 transform block w-full appearance-none rounded dark:rounded-none border-0 border-b border-gray-400 dark:bg-transparent dark:border-gray-500 bg-gray-200 text-gray-800 dark:text-gray-300 py-2.5 focus:border-brand-orange focus:outline-none focus:ring-0", required: true %>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <%= f.submit "Add New Book", class: "text-base md:text-lg mt-8 rounded-md bg-brand-orange px-10 py-2 text-white cursor-pointer" %>
+      </div>
+    <% end %>
+  </div>
+</div>
